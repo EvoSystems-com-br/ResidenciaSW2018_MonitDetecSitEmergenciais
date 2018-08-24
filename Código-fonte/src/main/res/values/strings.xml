@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">TCCV1</string>
+    <string name="pergunta_estado">Você está bem?</string>
+    <string name="nao">NÃO</string>
+    <string name="sim">SIM</string>
+    <string name="parametros_seguranca">PARÂMETROS DE SEGURANÇA</string>
+    <string name="informar_estado">INFORMAR ESTADO</string>
+    <string name="nome_contato">Nome</string>
+    <string name="endereco_casa">Endereço</string>
+    <string name="titulo_contato_seguranca">CONTATO DE SEGURANÇA</string>
+    <string name="titulo_editar_endereco">EDITAR ENDEREÇO DE CASA</string>
+    <string name="titulo_editar_contato">EDITAR CONTATO DE SEGURANÇA</string>
+    <string name="telefone_contato">Telefone</string>
+    <string name="titulo_endereco">ENDEREÇO DE CASA</string>
+    <string name="titulo_nome_cadastro">NOME</string>
+    <string name="titulo_telefone_cadastro">TELEFONE</string>
+    <string name="botao_cadastrar">CADASTRAR</string>
+    <string name="titulo_cadastro_endereco">Endereço</string>
+    <string name="botao_cadastro_endereco">CADASTRAR</string>
+</resources>

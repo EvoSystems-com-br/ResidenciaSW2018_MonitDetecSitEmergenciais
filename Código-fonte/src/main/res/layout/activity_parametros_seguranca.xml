@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ParametrosSeguranca"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/endereco_casa"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="178dp"
+        android:text="@string/endereco_casa"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_contato" />
+
+    <TextView
+        android:id="@+id/telefone_contato"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/telefone_contato"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/titulo_endereco"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nome_contato" />
+
+    <TextView
+        android:id="@+id/nome_contato"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/nome_contato"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/telefone_contato"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_contato" />
+
+    <TextView
+        android:id="@+id/titulo_contato"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="199dp"
+        android:text="@string/titulo_contato_seguranca"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/endereco_casa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titulo_endereco"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/titulo_endereco"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/endereco_casa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telefone_contato" />
+
+    <Button
+        android:id="@+id/b_editar_endereco"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/titulo_editar_endereco"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_editar_contato" />
+
+    <Button
+        android:id="@+id/b_editar_contato"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/titulo_editar_contato"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/b_editar_endereco"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endereco_casa" />
+</android.support.constraint.ConstraintLayout>

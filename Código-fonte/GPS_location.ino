@@ -30,6 +30,7 @@ char lon[12]; //longitude
 float del_lat; //diferenca medida na latitude em radianos
 float del_lon; //diferenca medida na latitude em radianos
 float avg_lat; //latitude media em radianos
+float K1, K2; //constantes para calculo da distancia
 double dist; //distancia do usuario para sua casa
 
 int state; //estado do usuario
@@ -123,7 +124,7 @@ void setup() {
     }
   }
 
-  class_sim808.USERdata.safe_radius = 50.0; //raio de seguranca
+  class_sim808.USERdata.safe_radius = 0.05; //raio de seguranca em km
 
   Serial.println();
   Serial.print("Numero do usuario = ");
@@ -159,14 +160,14 @@ void loop() {
     Serial.println(class_sim808.GPSdata.lon);
 
     //Verifica a distancia do usuario para sua casa usando a formula
-    //distancia = R*sqrt((del_lat)^2 + cos(avg_lat)*(del_lon)^2); onde
-    //R = raio da Terra (aproximadamente 6'371'009 metros)
-    // 1000/57296 = conversao de graus para radianos
-    del_lat = (1000*(class_sim808.USERdata.lat_home - class_sim808.GPSdata.lat))/57296;
-    del_lon = (1000*(class_sim808.USERdata.lon_home - class_sim808.GPSdata.lon))/57296;
-    //avg_lat = (1000/57296)*((lat_home + lat_GPS)/2) = (1000/(2*57296))*(lat_home + lat_GPS)
-    avg_lat = (500*(class_sim808.USERdata.lat_home + class_sim808.GPSdata.lat))/57296;
-    dist = 6371009*sqrt(sq(del_lat) + cos(avg_lat)*sq(del_lon));
+    //distancia = sqrt((K1*del_lat)^2 + (K2*del_lon)^2); onde
+    del_lat = (class_sim808.USERdata.lat_home - class_sim808.GPSdata.lat);
+    del_lon = (class_sim808.USERdata.lon_home - class_sim808.GPSdata.lon);
+    //De graus pra radianos
+    avg_lat = 0.5*(class_sim808.USERdata.lat_home + class_sim808.GPSdata.lat);
+    K1 = 111.13209 - 0.56605*cos(2*avg_lat) + 0.0012*cos(4*avg_lat);
+    K2 = 111.41513*cos(avg_lat) - 0.09455*cos(3*avg_lat) + 0.00012*cos(5*avg_lat);
+    dist = sqrt(sq(K1*del_lat) + sq(K2*del_lon));
 
     Serial.print("dist = ");
     Serial.println(dist);
